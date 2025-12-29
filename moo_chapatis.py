@@ -52,10 +52,10 @@ def save_new_order(product, quantity, total_price, location):
     save_orders(orders)
 
     socketio.emit('new_order', order)
-print("🔔 NEW ORDER RECEIVED:", order)
-
+    print("🔔 NEW ORDER RECEIVED:", order)
 
     return order
+
 
 # ===== ROUTES =====
 @app.route('/', methods=['GET', 'POST'])
@@ -279,6 +279,7 @@ if __name__ == '__main__':
         os.makedirs('static')
     port = int(os.environ.get("PORT", 5000))  # use Render's assigned port
     socketio.run(app, debug=True, host='0.0.0.0', port=port)
+
 
 
 
