@@ -80,7 +80,6 @@ def index():
                                   order_info=order_info)
 
 # ===== ADMIN LOGIN =====
-@app.route('/admin')
 @app.route('/admin', methods=['GET', 'POST'])
 def admin_login():
     return "<h2>Admin Login</h2><p>Use your credentials to access orders.</p>"
@@ -276,6 +275,7 @@ if __name__ == '__main__':
         os.makedirs('static')
     port = int(os.environ.get("PORT", 5000))
     socketio.run(app, debug=True, host='0.0.0.0', port=port)
+
 
 
 
