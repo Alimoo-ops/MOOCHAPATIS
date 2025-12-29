@@ -49,15 +49,8 @@ def save_new_order(product, quantity, total_price, location):
     orders.append(order)
     save_orders(orders)
 
-    # Emit new order to all connected admin clients
-    socketio.emit('new_order', order)  # remove 'broadcast=True'
-
-    print("🔔 NEW ORDER RECEIVED:", order)
-
-
-    # Real-time notification to admin page
-    socketio.emit('new_order', order)  # <-- remove broadcast=True
-    print("🔔 NEW ORDER RECEIVED:", order)
+    socketio.emit('new_order', order)
+print("🔔 NEW ORDER RECEIVED:", order)
 
 
     return order
@@ -89,9 +82,10 @@ def index():
 
 # ===== ADMIN LOGIN =====
 @app.route('/admin')
+@app.route('/admin', methods=['GET', 'POST'])
 def admin_login():
-    # existing login logic
-    ...
+    return "<h2>Admin Login</h2><p>Use your credentials to access orders.</p>"
+
 
 @app.route('/admin/orders')
 def admin_orders():
