@@ -2,9 +2,6 @@ from flask import Flask, render_template_string, request, jsonify, redirect, url
 from datetime import datetime, timedelta
 import os
 import json
-import eventlet
-eventlet.monkey_patch()
-
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
@@ -277,7 +274,7 @@ TEMPLATE = """
 if __name__ == '__main__':
     if not os.path.exists('static'):
         os.makedirs('static')
-    port = int(os.environ.get("PORT", 5000))  # use Render's assigned port
+    port = int(os.environ.get("PORT", 5000))
     socketio.run(app, debug=True, host='0.0.0.0', port=port)
 
 
