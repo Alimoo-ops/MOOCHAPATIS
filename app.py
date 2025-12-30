@@ -238,7 +238,7 @@ TEMPLATE = """
         <label>Price (KES)</label>
         <div class="total">Total: <span id="total_price">{{ unit_price }}</span></div>
 
-        <label for="location">Location / Extra Information</label>
+        <label for="location">Location, contacts and Extra information</label>
         <textarea id="location" name="location" required></textarea>
 
         <label><input type="checkbox" required> I confirm my order</label>
