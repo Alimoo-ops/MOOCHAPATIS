@@ -127,7 +127,11 @@ def admin_orders():
         // browser notification for admin
         if (Notification.permission === "granted") {
             let notif = new Notification("New Order Received!", {
-                body: `Product: ${order.product}\nQty: ${order.quantity}\nTotal: KES ${order.total_price}`
+                body: `Product: ${order.product}
+Qty: ${order.quantity}
+Location: ${order.location}
+Total: KES ${order.total_price}`
+
             });
 
             // clicking notification brings admin to orders page
@@ -260,7 +264,7 @@ TEMPLATE = """
 
         <p>
         To our esteemed customer, you might receive a call to confirm your order shortly
-        via your mpesa payment number. Keep screenshots of your mpesa messages for any queries.
+        via your mpesa payment number. Keep screenshots of your mpesa messages for any queries.."(My app is still under development!)"
         </p>
         <button onclick="closePopup()">Close</button>
     {% endif %}
