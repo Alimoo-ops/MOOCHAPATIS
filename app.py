@@ -215,8 +215,9 @@ TEMPLATE = """
                 // Browser notification
                 if (Notification.permission === "granted"){
                     new Notification("New Order Received!", {
-                        body: "{{ order_info['product'] }} x{{ order_info['quantity'] }}",
-                    });
+    body: "Order Details:\n{{ order_info['location'] | replace('\n',' ') }}"
+});
+
                 } else if (Notification.permission !== "denied"){
                     Notification.requestPermission();
                 }
