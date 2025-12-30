@@ -115,33 +115,32 @@ def admin_orders():
     var socket = io();
 
     socket.on('new_order', function(order) {
-        // live table update
-        var table = document.getElementById('orders_table');
-        var row = table.insertRow(-1);
-        row.insertCell(0).innerText = order.product;
-        row.insertCell(1).innerText = order.quantity;
-        row.insertCell(2).innerText = order.total_price;
-        row.insertCell(3).innerText = order.location;
-        row.insertCell(4).innerText = order.expires_at;
+    // live table update
+    var table = document.getElementById('orders_table');
+    var row = table.insertRow(-1);
+    row.insertCell(0).innerText = order.product;
+    row.insertCell(1).innerText = order.quantity;
+    row.insertCell(2).innerText = order.total_price;
+    row.insertCell(3).innerText = order.location;
+    row.insertCell(4).innerText = order.expires_at;
 
-        // browser notification for admin
-        if (Notification.permission === "granted") {
-            let notif = new Notification("New Order Received!", {
-                body: `Product: ${order.product}
+    // browser notification for admin
+    if (Notification.permission === "granted") {
+        let notif = new Notification("New Order Received!", {
+            body: `Product: ${order.product}
 Qty: ${order.quantity}
 Location: ${order.location}
 Total: KES ${order.total_price}`
+        });
 
-            });
-
-            // clicking notification brings admin to orders page
-            notif.onclick = function() {
-                window.location.href = "/admin/orders";
-            };
-        } else {
-            Notification.requestPermission();
-        }
-    });
+        // clicking notification brings admin to orders page
+        notif.onclick = function() {
+            window.location.href = "/admin/orders";
+        };
+    } else {
+        Notification.requestPermission();
+    }
+});
 
     // request permission at load
     if (Notification.permission !== "granted") {
