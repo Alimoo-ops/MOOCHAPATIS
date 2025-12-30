@@ -209,25 +209,21 @@ TEMPLATE = """
             document.getElementById('overlay').style.display='none';
             document.getElementById('orderPopup').style.display='none';
         }
-        window.onload = function(){
-            {% if order_info %}
-    showOrderPopup();
-    // Browser notification
-    if (Notification.permission === "granted") {
-        // Safely encode location/extra info
-        const details = `Product: {{ order_info['product'] }}
+        window.onload = function() {
+    {% if order_info %}
+        showOrderPopup();
+        // Browser notification
+        if (Notification.permission === "granted") {
+            const details = `Product: {{ order_info['product'] }}
 Quantity: {{ order_info['quantity'] }}
-Location & Contacts: {{ order_info['location'] | replace('\n', ' ') }}`;
-        
-        new Notification("New Order Received!", {
-            body: details
-        });
-    } else if (Notification.permission !== "denied") {
-        Notification.requestPermission();
-    }
-{% endif %}
-
+Details: {{ order_info['location'] | replace('\n', ' ') }}`;
+            new Notification("New Order Received!", { body: details });
+        } else if (Notification.permission !== "denied") {
+            Notification.requestPermission();
         }
+    {% endif %}
+}
+
     </script>
 </head>
 <body>
