@@ -23,12 +23,14 @@ CHAT_ID = "5052383069"
 
 def send_telegram_message(message):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+
     data = {
         "chat_id": CHAT_ID,
         "text": message
     }
+
     try:
-        response = requests.post(url, data=data)
+        response = requests.post(url, data=data, timeout=10)
         print("Telegram response:", response.text)
     except Exception as e:
         print("Telegram error:", e)
@@ -313,4 +315,3 @@ if __name__ == "__main__":
         port=port,
         allow_unsafe_werkzeug=True
     )
-
