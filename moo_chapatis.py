@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = "moo_secret_key"
 
 # Initialize SocketIO
-socketio = SocketIO(app, async_mode="threading")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode="eventlet")
 
 
 # ===== CONFIGURATION =====
@@ -18,22 +18,28 @@ CONTACTS = ["0718 357 737-Alimoo"]
 ORDERS_FILE = "orders.json"
 ADMIN_PASSWORD = "0708ALIMOO"
 
-BOT_TOKEN = "8613821504:AAHbsNEQamPHfBCtNucE0fBfE1bmwJpjSJY"
-CHAT_ID = "5052383069"
+BOT_TOKEN : "8613821504:AAHbsNEQamPHfBCtNucE0fBfE1bmwJpjSJY"
+CHAT_ID : "5052383069"
 
 def send_telegram_message(message):
-    url = f"https://api.telegram.org/bot8613821504:AAHbsNEQamPHfBCtNucE0fBfE1bmwJpjSJY/sendMessage"
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
     data = {
-        "chat_id": 5052383069,
+        "chat_id": CHAT_ID,
         "text": message
     }
 
     try:
         response = requests.post(url, data=data, timeout=10)
-        print("Telegram response:", response.text)
+
+        print("Status Code:", response.status_code)
+        print("Response:", response.text)
+
+        if response.status_code != 200:
+            print("❌ Telegram message failed!")
+
     except Exception as e:
-        print("Telegram error:", e)
+        print("❌ Telegram error:", e)
 
 # ===== ORDER HELPERS =====
 def load_orders():
@@ -106,6 +112,11 @@ def index():
                                   unit_price=UNIT_PRICE,
                                   contacts=CONTACTS,
                                   order_info=order_info)
+
+@app.route('/test-telegram')
+def test_telegram():
+    send_telegram_message("✅ Telegram is working!")
+    return "Sent"
 
 # ===== ADMIN LOGIN =====
 @app.route('/admin', methods=['GET', 'POST'])
@@ -302,7 +313,6 @@ Location and Extra details: {{ order_info['location'] | replace('\n', ' ') }}`;
 """
 
 # ===== RUN =====
-# ===== RUN =====
 if __name__ == "__main__":
     if not os.path.exists("static"):
         os.makedirs("static")
@@ -312,6 +322,6 @@ if __name__ == "__main__":
     socketio.run(
         app,
         host="0.0.0.0",
-        port=port,
+        port=5000,
         allow_unsafe_werkzeug=True
     )
