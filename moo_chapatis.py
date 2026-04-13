@@ -96,6 +96,9 @@ def save_new_order(product, quantity, total_price, location):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     cleanup_orders()
+
+    print("REQUEST METHOD:", request.method)  # 👈 ADD IT HERE
+
     total_price = 0
     order_submitted = False
     order_info = None
