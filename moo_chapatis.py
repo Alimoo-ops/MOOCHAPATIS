@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = "moo_secret_key"
 
 # Initialize SocketIO
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode="eventlet")
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 
 # ===== CONFIGURATION =====
@@ -18,8 +18,8 @@ CONTACTS = ["0718 357 737-Alimoo"]
 ORDERS_FILE = "orders.json"
 ADMIN_PASSWORD = "0708ALIMOO"
 
-BOT_TOKEN : "8613821504:AAHbsNEQamPHfBCtNucE0fBfE1bmwJpjSJY"
-CHAT_ID : "5052383069"
+BOT_TOKEN = "8613821504:AAHbsNEQamPHfBCtNucE0fBfE1bmwJpjSJY"
+CHAT_ID = "5052383069"
 
 def send_telegram_message(message):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
@@ -317,11 +317,9 @@ if __name__ == "__main__":
     if not os.path.exists("static"):
         os.makedirs("static")
 
-    port = int(os.environ.get("PORT", 10000))
-
     socketio.run(
         app,
-        host="0.0.0.0",
-        port=5000,
-        allow_unsafe_werkzeug=True
+        host="127.0.0.1",
+        port=5001,
+        debug=True
     )
