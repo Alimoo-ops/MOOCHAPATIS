@@ -18,7 +18,7 @@ CONTACTS = ["0718 357 737-Alimoo"]
 ORDERS_FILE = "orders.json"
 ADMIN_PASSWORD = "0708ALIMOO"
 
-BOT_TOKEN = "8613821504:AAGqAR1SppHav2Hwvgjzy5wfGuWDZuymHnY"
+BOT_TOKEN = "8613821504:AAHbsNEQamPHfBCtNucE0fBfE1bmwJpjSJY"
 CHAT_ID = "5052383069"
 
 def send_telegram_message(message):
