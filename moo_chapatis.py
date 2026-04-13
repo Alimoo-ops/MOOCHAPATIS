@@ -22,10 +22,10 @@ BOT_TOKEN = "8613821504:AAHbsNEQamPHfBCtNucE0fBfE1bmwJpjSJY"
 CHAT_ID = "5052383069"
 
 def send_telegram_message(message):
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    url = f"https://api.telegram.org/bot8613821504:AAHbsNEQamPHfBCtNucE0fBfE1bmwJpjSJY/sendMessage"
 
     data = {
-        "chat_id": CHAT_ID,
+        "chat_id": 5052383069,
         "text": message
     }
 
