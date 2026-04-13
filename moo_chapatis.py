@@ -60,8 +60,12 @@ def cleanup_orders():
     
 
 def save_new_order(product, quantity, total_price, location):
+
+    print("🔥 SAVE_NEW_ORDER EXECUTED ON RENDER")  # 👈 ADD IT HERE FIRST
+
     cleanup_orders()
     orders = load_orders()
+
     order = {
         "product": product,
         "quantity": quantity,
@@ -83,7 +87,7 @@ def save_new_order(product, quantity, total_price, location):
     )
     
     socketio.emit('new_order', order)
-    print("🔔 NEW ORDER RECEIVED:", order)
+    print("📡 TELEGRAM FUNCTION CALLED")
 
     return order
 
