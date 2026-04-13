@@ -314,12 +314,8 @@ Location and Extra details: {{ order_info['location'] | replace('\n', ' ') }}`;
 
 # ===== RUN =====
 if __name__ == "__main__":
-    if not os.path.exists("static"):
-        os.makedirs("static")
-
     socketio.run(
         app,
-        host="127.0.0.1",
-        port=5001,
-        debug=True
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 10000))
     )
