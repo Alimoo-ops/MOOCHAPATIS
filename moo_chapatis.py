@@ -2,6 +2,7 @@ from flask import Flask, render_template_string, request, jsonify, redirect, url
 from datetime import datetime, timedelta
 import os
 import json
+import threading
 import requests
 from flask_socketio import SocketIO
 
@@ -22,24 +23,18 @@ BOT_TOKEN = "8613821504:AAHbsNEQamPHfBCtNucE0fBfE1bmwJpjSJY"
 CHAT_ID = "5052383069"
 
 def send_telegram_message(message):
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    def task():
+        try:
+            url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+            requests.post(
+                url,
+                data={"chat_id": CHAT_ID, "text": message},
+                timeout=10
+            )
+        except Exception as e:
+            print("TELEGRAM ERROR:", e)
 
-    data = {
-        "chat_id": CHAT_ID,
-        "text": message
-    }
-
-    try:
-        response = requests.post(url, data=data, timeout=10)
-
-        print("Status Code:", response.status_code)
-        print("Response:", response.text)
-
-        if response.status_code != 200:
-            print("❌ Telegram message failed!")
-
-    except Exception as e:
-        print("❌ Telegram error:", e)
+    threading.Thread(target=task).start()
 
 # ===== ORDER HELPERS =====
 def load_orders():
