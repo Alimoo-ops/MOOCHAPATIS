@@ -269,7 +269,7 @@ Location and Extra details: {{ order_info['location'] | replace('\n', ' ') }}`;
 <div class="container">
     <h1>Moo Chapatis</h1>
     <div class="slogans">Order, we Deliver</div>
-    <form method="POST">
+    <form method="POST" action="/">
         <label for="product">Product</label>
         <input type="text" id="product" name="product" required>
 
