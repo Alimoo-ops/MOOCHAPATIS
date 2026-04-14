@@ -205,9 +205,9 @@ TEMPLATE = """
     <style>
         body {
     background-image: url("/static/moo.png?v=8");
-background-size: contain;
+background-size: cover;
 background-position: center;
-background-repeat: no-repeat;
+background-repeat: repeat;
     font-family: Arial, sans-serif;
     color: #333;
     font-size: 16px;
