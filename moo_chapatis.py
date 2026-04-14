@@ -204,7 +204,7 @@ TEMPLATE = """
     <title>Moo Chapatis</title>
     <style>
         body {
-    background-image: url("/static/moo.png?v=2");
+    background-image: url("/static/moo.png?v=8");
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
