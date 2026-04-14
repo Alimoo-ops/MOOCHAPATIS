@@ -205,7 +205,9 @@ TEMPLATE = """
     <style>
         body {
     background-image: url('/static/moo.png');
-    background-size: cover;
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     color: #333;
     font-size: 16px;
@@ -215,26 +217,38 @@ TEMPLATE = """
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    overflow-x: hidden;
 }
         .container {
-    background: rgba(255,255,255,0.92);
+    background: rgba(255,255,255,0.95);
     width: 95%;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
+    max-width: 420px;   /* tighter for phones */
+    margin: 10px auto;
+    padding: 14px;
     border-radius: 12px;
+    box-sizing: border-box;
 }
         h1, h2 { text-align: center; }
         label { display:block; margin:10px 0 5px; }
-        input, textarea { width:100%; padding:12px; margin-bottom:12px; }
-        .total {
-    font-weight: bold;
-    text-align: right;
-    font-size: 18px;
-    margin-bottom: 10px;
+        input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px; /* prevents zoom on Android */
+    box-sizing: border-box;
 }
         .contacts, .slogans, .bonus { text-align:center; margin-top:15px; }
-        button { background-color:#f4a261; border:none; padding:10px 20px; border-radius:5px; cursor:pointer; }
+        button {
+    width: 100%;
+    background-color:#f4a261;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
         button:hover { background-color:#e76f51; }
         .order-popup {
             position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
@@ -297,7 +311,7 @@ Location and Extra details: {{ order_info['location'] | replace('\n', ' ') }}`;
         <label for="location">Location, contacts and Extra information</label>
         <textarea id="location" name="location" required></textarea>
 
-        <label style="font-size:16px;">
+        <label style="display:flex; align-items:center; font-size:14px;">
     <input type="checkbox" required style="transform: scale(1.5); margin-right:10px;">
     I confirm my order (must click checkbox)
 </label>
