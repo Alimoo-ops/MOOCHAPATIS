@@ -23,18 +23,19 @@ BOT_TOKEN = "8613821504:AAHbsNEQamPHfBCtNucE0fBfE1bmwJpjSJY"
 CHAT_ID = "5052383069"
 
 def send_telegram_message(message):
-    def task():
-        try:
-            url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-            requests.post(
-                url,
-                data={"chat_id": CHAT_ID, "text": message},
-                timeout=10
-            )
-        except Exception as e:
-            print("TELEGRAM ERROR:", e)
+    try:
+        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+        response = requests.post(
+            url,
+            data={"chat_id": CHAT_ID, "text": message},
+            timeout=10
+        )
 
-    threading.Thread(target=task).start()
+        print("✅ TELEGRAM STATUS:", response.status_code)
+        print("📩 TELEGRAM RESPONSE:", response.text)
+
+    except Exception as e:
+        print("❌ TELEGRAM ERROR:", e)
 
 # ===== ORDER HELPERS =====
 def load_orders():
