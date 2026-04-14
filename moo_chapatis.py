@@ -200,25 +200,39 @@ TEMPLATE = """
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Moo Chapatis</title>
     <style>
         body {
-            background-image: url('/static/moo.png');
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            color: #333;
-        }
+    background-image: url('/static/moo.png');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
         .container {
-            background: rgba(255,255,255,0.85);
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 20px;
-            border-radius: 10px;
-        }
+    background: rgba(255,255,255,0.92);
+    width: 95%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+}
         h1, h2 { text-align: center; }
         label { display:block; margin:10px 0 5px; }
-        input, textarea { width:100%; padding:8px; margin-bottom:10px; }
-        .total { font-weight:bold; text-align:right; }
+        input, textarea { width:100%; padding:12px; margin-bottom:12px; }
+        .total {
+    font-weight: bold;
+    text-align: right;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
         .contacts, .slogans, .bonus { text-align:center; margin-top:15px; }
         button { background-color:#f4a261; border:none; padding:10px 20px; border-radius:5px; cursor:pointer; }
         button:hover { background-color:#e76f51; }
@@ -283,7 +297,10 @@ Location and Extra details: {{ order_info['location'] | replace('\n', ' ') }}`;
         <label for="location">Location, contacts and Extra information</label>
         <textarea id="location" name="location" required></textarea>
 
-        <label><input type="checkbox" required> I confirm my order(must click that small checkbox)</label>
+        <label style="font-size:16px;">
+    <input type="checkbox" required style="transform: scale(1.5); margin-right:10px;">
+    I confirm my order (must click checkbox)
+</label>
         <button type="submit">Submit Order</button>
     </form>
 
@@ -301,8 +318,17 @@ Location and Extra details: {{ order_info['location'] | replace('\n', ' ') }}`;
         <p>Location: {{ order_info['location'] }}</p>
         <hr>
         <p><strong>(ONLY PAID ORDERS CAN BE DELIVERD) MPESA PAYMENTS TO - 0718357737 (F**ALIMOO**M)</strong></p>
-        <input type="checkbox" id="copyCheckbox" style="display:none;" onclick="copy0718357737()">
-<label for="copyCheckbox" style="cursor:pointer; color:blue; text-decoration:underline;">Copy number</label>
+        <label style="cursor:pointer; color:blue; text-decoration:underline;" onclick="copyMpesaNumber()">
+    Copy number
+</label>
+
+<script>
+function copyMpesaNumber() {
+    navigator.clipboard.writeText("0718357737")
+        .then(() => alert("Number copied"))
+        .catch(() => alert("Copy failed"));
+}
+</script>
 
         <p>
         To our esteemed customer, you might receive a call to confirm your order shortly
