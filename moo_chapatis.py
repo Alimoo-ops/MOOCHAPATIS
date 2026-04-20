@@ -297,7 +297,8 @@ Location and Extra details: {{ order_info['location'] | replace('\n', ' ') }}`;
 <body>
 <div class="container">
     <h1>Moo Chapatis</h1>
-    <div class="slogans">Order, we Deliver</div>
+    <div class="slogans">Order, we Deliver
+    All Deliveries from 7.pm-10.pm</div>
     <form method="POST" action="/">
         <label for="product">Product</label>
         <input type="text" id="product" name="product" required>
@@ -308,7 +309,7 @@ Location and Extra details: {{ order_info['location'] | replace('\n', ' ') }}`;
         <label>Price (KES)</label>
         <div class="total">Total: <span id="total_price">{{ unit_price }}</span></div>
 
-        <label for="location">Location, contacts and Extra information</label>
+        <label for="location">Phone number & Location(must)-Extra information</label>
         <textarea id="location" name="location" required></textarea>
 
         <label style="display:flex; align-items:center; font-size:14px;">
