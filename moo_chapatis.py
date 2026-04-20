@@ -246,7 +246,7 @@ html, body {
     border:none;
     padding:14px;
     border-radius:8px;
-    font-size:16px;
+    font-size:18px;
     cursor:pointer;
 }
         button:hover { background-color:#e76f51; }
