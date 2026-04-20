@@ -349,7 +349,7 @@ function copyMpesaNumber() {
 
         <p>
         To our esteemed customer, you might receive a call to confirm your order shortly
-        via your mpesa payment number. Keep screenshots of your mpesa messages for any queries.."(My app is still under development!)"
+        via your phone number. Keep screenshots of your mpesa messages for any queries.."(My app is still under development!)"
         </p>
         <button onclick="closePopup()">Close</button>
     {% endif %}
