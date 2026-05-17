@@ -58,7 +58,7 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   name: "Moo Chapatis",
-  description: "Fresh hot chapatis delivered fast in Kitengela, Kenya. 24-hour delivery daily.",
+  description: "Fresh hot chapatis delivered fast in Kitengela, Kenya. Order 7PM–10PM daily.",
   servesCuisine: "Kenyan",
   telephone: "+254718357737",
   address: {
@@ -67,7 +67,7 @@ const orgJsonLd = {
     addressRegion: "Kajiado",
     addressCountry: "KE",
   },
-  openingHours: "Mo-Su 00:00-23:59",
+  openingHours: "Mo-Su 19:00-22:00",
   priceRange: "KSh",
   areaServed: "Kitengela",
 };
@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Order fresh hot chapatis delivered to your door in Kitengela, Kenya. 24-hour delivery. Call or WhatsApp 0718357737.",
+          "Order fresh hot chapatis delivered to your door in Kitengela, Kenya. Daily delivery 7PM–10PM. Call or WhatsApp 0718357737.",
       },
       {
         name: "keywords",
@@ -99,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Moo Chapatis — Fresh Hot Chapatis Delivered Fast" },
       {
         property: "og:description",
-        content: "Order fresh hot chapatis in Kitengela. 24-hour delivery. WhatsApp 0718357737.",
+        content: "Order fresh hot chapatis in Kitengela. Delivery 7PM–10PM. WhatsApp 0718357737.",
       },
       { property: "og:locale", content: "en_KE" },
 

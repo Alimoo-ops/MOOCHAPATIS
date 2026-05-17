@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Order fresh hot chapatis in Kitengela. 24-hour delivery. Bonus on first 5+ orders. WhatsApp 0718357737.",
+          "Order fresh hot chapatis in Kitengela. Daily delivery 7PM–10PM. Bonus on first 5+ orders. WhatsApp 0718357737.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -217,7 +217,7 @@ function HomePage() {
             <div className="grid items-center gap-6 sm:grid-cols-2">
               <div className="text-primary-foreground animate-fade-up">
                 <Badge className="mb-3 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur hover:bg-white/30">
-                  <Sparkles className="mr-1 h-3 w-3" /> Kitengela • 24hrs
+                  <Sparkles className="mr-1 h-3 w-3" /> Kitengela • 7PM–10PM
                 </Badge>
                 <h1 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl">
                   Fresh Hot Chapatis<br />Delivered Fast.
@@ -257,7 +257,7 @@ function HomePage() {
         <section className="mx-auto -mt-5 max-w-6xl px-4">
           <div className="grid grid-cols-3 gap-2 rounded-2xl border bg-card p-2 shadow-card sm:gap-3 sm:p-4">
             {[
-              { icon: Clock, label: "Open 24 Hours" },
+              { icon: Clock, label: "Daily 7–10 PM" },
               { icon: Truck, label: "Free over 10" },
               { icon: MapPin, label: "All Kitengela" },
             ].map((it, i) => (
@@ -379,7 +379,7 @@ function HomePage() {
               <Clock className="h-5 w-5 text-primary" />
               <div>
                 <div className="text-[11px] text-muted-foreground">Open daily</div>
-                <div className="text-sm font-bold">24 Hours</div>
+                <div className="text-sm font-bold">7:00 PM – 10:00 PM</div>
               </div>
             </div>
           </div>
@@ -488,7 +488,7 @@ function HomePage() {
             </ol>
           </div>
           <div className="rounded-xl bg-secondary/60 p-3 text-xs">
-            <b>Estimated delivery:</b> 20–40 mins (24hrs). We'll WhatsApp you for confirmation.
+            <b>Estimated delivery:</b> 20–40 mins (7–10 PM). We'll WhatsApp you for confirmation.
           </div>
           <div className="flex gap-2">
             <a href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Hi, I just placed order ${confirmed?.ref} for KSh ${confirmed?.total}.`)}`} target="_blank" rel="noreferrer" className="flex-1">
