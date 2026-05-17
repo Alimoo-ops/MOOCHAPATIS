@@ -1,0 +1,13 @@
+{
+  "name": "Moo Chapatis — Fresh Hot Chapatis Delivered Fast",
+  "short_name": "Moo Chapatis",
+  "description": "Order fresh hot chapatis delivered to your door in Kitengela. 7PM–10PM daily.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8f0",
+  "theme_color": "#ff6b1a",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
