@@ -96,7 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Moo Chapatis" },
-      { property: "og:title", content: "Moo Chapatis — Fresh Hot Chapatis Delivered Fast" },
+      { property: "og:title", content: "Moo Chapatis — Fresh Hot Chapatis Delivered Fast in Kitengela" },
       {
         property: "og:description",
         content: "Order fresh hot chapatis in Kitengela. Delivery 7PM–10PM. WhatsApp 0718357737.",
@@ -104,12 +104,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "en_KE" },
 
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Moo Chapatis — Order, We Deliver" },
-      { name: "twitter:description", content: "Fresh hot chapatis delivered fast in Kitengela." },
+      { name: "twitter:title", content: "Moo Chapatis — Fresh Hot Chapatis Delivered Fast in Kitengela" },
+      { name: "twitter:description", content: "Moo Chapatis Express is a mobile-first food delivery website for ordering fresh chapatis in Kitengela, Kenya." },
 
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-title", content: "Moo Chapatis" },
       { name: "format-detection", content: "telephone=yes" },
+      { name: "description", content: "Moo Chapatis Express is a mobile-first food delivery website for ordering fresh chapatis in Kitengela, Kenya." },
+      { property: "og:description", content: "Moo Chapatis Express is a mobile-first food delivery website for ordering fresh chapatis in Kitengela, Kenya." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/h2UORwLvBMdSCmWQUwze28juLPH2/social-images/social-1779015559797-moo.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/h2UORwLvBMdSCmWQUwze28juLPH2/social-images/social-1779015559797-moo.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
