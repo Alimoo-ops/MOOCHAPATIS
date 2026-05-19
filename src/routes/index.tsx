@@ -258,7 +258,7 @@ function HomePage() {
         <section className="mx-auto -mt-5 max-w-6xl px-4">
           <div className="grid grid-cols-3 gap-2 rounded-2xl border bg-card p-2 shadow-card sm:gap-3 sm:p-4">
             {[
-              { icon: Clock, label: "Daily 7–10 PM" },
+              { icon: Clock, label: "Open 24 Hours" },
               { icon: Truck, label: "Free over 10" },
               { icon: MapPin, label: "All Kitengela" },
             ].map((it, i) => (
