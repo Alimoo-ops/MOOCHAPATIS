@@ -80,19 +80,20 @@ export const Route = createFileRoute("/")({
 
 const PHONE = "0718357737";
 const WHATSAPP = "254718357737";
+const WHATSAPP_LINK = "https://wa.me/qr/S6I3DLJHPQCUJ1";
 const MPESA = "0718357737";
 
 const PRODUCTS = [
   { id: "classic", name: "Classic Chapati", price: 20, tag: "Most loved", desc: "Soft, layered, hot off the pan." },
-  { id: "family", name: "Family Pack (10)", price: 180, tag: "Save KSh 20", desc: "10 fresh chapatis for the whole family." },
-  { id: "jumbo", name: "Jumbo Pack (20)", price: 350, tag: "Best value", desc: "20 chapatis — perfect for events & sharing." },
-  { id: "supreme", name: "Supreme Soft (5)", price: 110, tag: "Extra soft", desc: "Premium extra-soft chapatis, 5pcs." },
+  { id: "family", name: "Family Pack (10)", price: 190, tag: "Family favourite", desc: "10 fresh chapatis for the whole family." },
+  { id: "jumbo", name: "Jumbo Pack (20)", price: 390, tag: "Best value", desc: "20 chapatis — perfect for events & sharing." },
+  { id: "supreme", name: "Supreme (24)", price: 470, tag: "Premium", desc: "24 premium extra-soft chapatis." },
 ];
 
 const AREAS = [
   "Kitengela Town", "Milimani", "Yukos", "Acacia", "Chuna", "Kimalat",
   "New Valley", "Nyama Villa", "Old Namanga Road", "Deliverance", "Korrompoi",
-  "EPZ", "Athi River", "GMC", "Prisons", "KAG", "Oloosirkon", "Other (specify)",
+  "EPZ", "GMC", "Prisons", "KAG", "Oloosirkon", "Other (specify)",
 ];
 
 const TESTIMONIALS = [
