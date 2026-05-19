@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Order fresh hot chapatis in Kitengela. Daily delivery 7PM–10PM. Bonus on first 5+ orders. WhatsApp 0718357737.",
+          "Order fresh hot chapatis in Kitengela. Open 24 hours. Bonus on first 5+ orders. WhatsApp 0718357737.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -80,19 +80,20 @@ export const Route = createFileRoute("/")({
 
 const PHONE = "0718357737";
 const WHATSAPP = "254718357737";
+const WHATSAPP_LINK = "https://wa.me/qr/S6I3DLJHPQCUJ1";
 const MPESA = "0718357737";
 
 const PRODUCTS = [
   { id: "classic", name: "Classic Chapati", price: 20, tag: "Most loved", desc: "Soft, layered, hot off the pan." },
-  { id: "family", name: "Family Pack (10)", price: 180, tag: "Save KSh 20", desc: "10 fresh chapatis for the whole family." },
-  { id: "jumbo", name: "Jumbo Pack (20)", price: 350, tag: "Best value", desc: "20 chapatis — perfect for events & sharing." },
-  { id: "supreme", name: "Supreme Soft (5)", price: 110, tag: "Extra soft", desc: "Premium extra-soft chapatis, 5pcs." },
+  { id: "family", name: "Family Pack (10)", price: 190, tag: "Family favourite", desc: "10 fresh chapatis for the whole family." },
+  { id: "jumbo", name: "Jumbo Pack (20)", price: 390, tag: "Best value", desc: "20 chapatis — perfect for events & sharing." },
+  { id: "supreme", name: "Supreme (24)", price: 470, tag: "Premium", desc: "24 premium extra-soft chapatis." },
 ];
 
 const AREAS = [
   "Kitengela Town", "Milimani", "Yukos", "Acacia", "Chuna", "Kimalat",
   "New Valley", "Nyama Villa", "Old Namanga Road", "Deliverance", "Korrompoi",
-  "EPZ", "Athi River", "GMC", "Prisons", "KAG", "Oloosirkon", "Other (specify)",
+  "EPZ", "GMC", "Prisons", "KAG", "Oloosirkon", "Other (specify)",
 ];
 
 const TESTIMONIALS = [
@@ -202,7 +203,7 @@ function HomePage() {
               <div className="text-[10px] font-medium text-muted-foreground">Order, We Deliver</div>
             </div>
           </a>
-          <Button size="sm" className="rounded-full bg-gradient-primary shadow-soft" onClick={() => openOrder()}>
+          <Button size="sm" className="rounded-full bg-gradient-primary shadow-soft transition-transform hover:scale-105 active:scale-95" onClick={() => openOrder()}>
             <ShoppingBag className="mr-1.5 h-4 w-4" /> Order
           </Button>
         </div>
@@ -217,7 +218,7 @@ function HomePage() {
             <div className="grid items-center gap-6 sm:grid-cols-2">
               <div className="text-primary-foreground animate-fade-up">
                 <Badge className="mb-3 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur hover:bg-white/30">
-                  <Sparkles className="mr-1 h-3 w-3" /> Kitengela • 7PM–10PM
+                  <Sparkles className="mr-1 h-3 w-3" /> Kitengela • Open 24 Hours
                 </Badge>
                 <h1 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl">
                   Fresh Hot Chapatis<br />Delivered Fast.
@@ -226,16 +227,16 @@ function HomePage() {
                   Order, We Deliver. Soft, layered chapatis cooked fresh and brought hot to your door.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <Button size="lg" onClick={() => openOrder()} className="rounded-full bg-white text-primary shadow-glow hover:bg-white/95">
+                  <Button size="lg" onClick={() => openOrder()} className="rounded-full bg-white text-primary shadow-glow hover:bg-white/95 transition-transform hover:scale-105 active:scale-95 animate-pulse-glow">
                     <ShoppingBag className="mr-2 h-5 w-5" /> Order Now
                   </Button>
-                  <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
-                    <Button size="lg" variant="outline" className="rounded-full border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20 hover:text-white">
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                    <Button size="lg" variant="outline" className="rounded-full border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20 hover:text-white transition-transform hover:scale-105 active:scale-95">
                       <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp
                     </Button>
                   </a>
                 </div>
-                <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-black/25 px-3 py-1.5 text-xs font-semibold backdrop-blur">
+                <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-black/25 px-3 py-1.5 text-xs font-semibold backdrop-blur animate-float">
                   <Gift className="h-3.5 w-3.5" /> Claim a BONUS on your first order of 5+ chapatis!
                 </div>
               </div>
@@ -257,7 +258,7 @@ function HomePage() {
         <section className="mx-auto -mt-5 max-w-6xl px-4">
           <div className="grid grid-cols-3 gap-2 rounded-2xl border bg-card p-2 shadow-card sm:gap-3 sm:p-4">
             {[
-              { icon: Clock, label: "Daily 7–10 PM" },
+              { icon: Clock, label: "Open 24 Hours" },
               { icon: Truck, label: "Free over 10" },
               { icon: MapPin, label: "All Kitengela" },
             ].map((it, i) => (
@@ -317,7 +318,7 @@ function HomePage() {
             <p className="mt-1 max-w-md text-sm opacity-95">
               Order today and we'll add extras to your pack. Limited daily — order early!
             </p>
-            <Button onClick={() => openOrder()} className="mt-4 rounded-full bg-white text-primary hover:bg-white/95">
+            <Button onClick={() => openOrder()} className="mt-4 rounded-full bg-white text-primary hover:bg-white/95 transition-transform hover:scale-105 active:scale-95 animate-pulse-glow">
               Claim Bonus
             </Button>
           </div>
@@ -368,7 +369,7 @@ function HomePage() {
                 <div className="text-sm font-bold">{PHONE}</div>
               </div>
             </a>
-            <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl bg-secondary/60 p-4 transition hover:bg-secondary">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl bg-secondary/60 p-4 transition hover:bg-secondary">
               <MessageCircle className="h-5 w-5 text-primary" />
               <div>
                 <div className="text-[11px] text-muted-foreground">WhatsApp</div>
@@ -378,8 +379,8 @@ function HomePage() {
             <div className="flex items-center gap-3 rounded-2xl bg-secondary/60 p-4">
               <Clock className="h-5 w-5 text-primary" />
               <div>
-                <div className="text-[11px] text-muted-foreground">Open daily</div>
-                <div className="text-sm font-bold">7:00 PM – 10:00 PM</div>
+                <div className="text-[11px] text-muted-foreground">Open</div>
+                <div className="text-sm font-bold">24 Hours</div>
               </div>
             </div>
           </div>
@@ -392,11 +393,11 @@ function HomePage() {
 
       {/* Floating WhatsApp */}
       <a
-        href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hi Moo Chapatis! I'd like to order.")}`}
+        href={WHATSAPP_LINK}
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[oklch(0.7_0.18_150)] text-white shadow-glow animate-pulse-glow"
+        className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[oklch(0.7_0.18_150)] text-white shadow-glow animate-pulse-glow transition-transform hover:scale-110 active:scale-95"
       >
         <MessageCircle className="h-7 w-7" />
       </a>
