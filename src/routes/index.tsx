@@ -329,7 +329,7 @@ function HomePage() {
           <h2 className="text-2xl font-black tracking-tight sm:text-3xl">Delivery Coverage</h2>
           <p className="mb-4 text-sm text-muted-foreground">We deliver across Kitengela and nearby areas.</p>
           <div className="flex flex-wrap gap-2">
-            {AREAS.filter((a) => a !== "Other (specify)").map((a) => (
+            {AREAS.filter((a) => a !== "Other? Specify below").map((a) => (
               <span key={a} className="rounded-full border bg-card px-3 py-1.5 text-xs font-semibold shadow-card">
                 <MapPin className="mr-1 inline h-3 w-3 text-primary" />
                 {a}
