@@ -80,7 +80,7 @@ export const Route = createFileRoute("/")({
 
 const PHONE = "0718357737";
 const WHATSAPP = "254718357737";
-const WHATSAPP_LINK = `https://wa.me/${"254718357737"}`;
+const WHATSAPP_LINK = "https://wa.me/qr/4L3GTQG4MQQGB1";
 const MPESA = "0718357737";
 
 const PRODUCTS = [
@@ -492,7 +492,7 @@ function HomePage() {
             <b>Estimated delivery:</b> 20–40 mins (7–10 PM). We'll WhatsApp you for confirmation.
           </div>
           <div className="flex gap-2">
-            <a href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Hi, I just placed order ${confirmed?.ref} for KSh ${confirmed?.total}.`)}`} target="_blank" rel="noreferrer" className="flex-1">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex-1">
               <Button className="w-full rounded-full bg-[oklch(0.7_0.18_150)] hover:bg-[oklch(0.65_0.18_150)]">
                 <MessageCircle className="mr-2 h-4 w-4" /> Confirm on WhatsApp
               </Button>
