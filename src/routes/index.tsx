@@ -369,7 +369,7 @@ function HomePage() {
                 <div className="text-sm font-bold">{PHONE}</div>
               </div>
             </a>
-            <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl bg-secondary/60 p-4 transition hover:bg-secondary">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl bg-secondary/60 p-4 transition hover:bg-secondary">
               <MessageCircle className="h-5 w-5 text-primary" />
               <div>
                 <div className="text-[11px] text-muted-foreground">WhatsApp</div>
@@ -379,8 +379,8 @@ function HomePage() {
             <div className="flex items-center gap-3 rounded-2xl bg-secondary/60 p-4">
               <Clock className="h-5 w-5 text-primary" />
               <div>
-                <div className="text-[11px] text-muted-foreground">Open daily</div>
-                <div className="text-sm font-bold">7:00 PM – 10:00 PM</div>
+                <div className="text-[11px] text-muted-foreground">Open</div>
+                <div className="text-sm font-bold">24 Hours</div>
               </div>
             </div>
           </div>
