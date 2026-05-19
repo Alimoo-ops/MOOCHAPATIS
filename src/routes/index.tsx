@@ -218,7 +218,7 @@ function HomePage() {
             <div className="grid items-center gap-6 sm:grid-cols-2">
               <div className="text-primary-foreground animate-fade-up">
                 <Badge className="mb-3 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur hover:bg-white/30">
-                  <Sparkles className="mr-1 h-3 w-3" /> Kitengela • 7PM–10PM
+                  <Sparkles className="mr-1 h-3 w-3" /> Kitengela • Open 24 Hours
                 </Badge>
                 <h1 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl">
                   Fresh Hot Chapatis<br />Delivered Fast.
@@ -227,16 +227,16 @@ function HomePage() {
                   Order, We Deliver. Soft, layered chapatis cooked fresh and brought hot to your door.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <Button size="lg" onClick={() => openOrder()} className="rounded-full bg-white text-primary shadow-glow hover:bg-white/95">
+                  <Button size="lg" onClick={() => openOrder()} className="rounded-full bg-white text-primary shadow-glow hover:bg-white/95 transition-transform hover:scale-105 active:scale-95 animate-pulse-glow">
                     <ShoppingBag className="mr-2 h-5 w-5" /> Order Now
                   </Button>
-                  <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer">
-                    <Button size="lg" variant="outline" className="rounded-full border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20 hover:text-white">
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                    <Button size="lg" variant="outline" className="rounded-full border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20 hover:text-white transition-transform hover:scale-105 active:scale-95">
                       <MessageCircle className="mr-2 h-5 w-5" /> WhatsApp
                     </Button>
                   </a>
                 </div>
-                <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-black/25 px-3 py-1.5 text-xs font-semibold backdrop-blur">
+                <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-black/25 px-3 py-1.5 text-xs font-semibold backdrop-blur animate-float">
                   <Gift className="h-3.5 w-3.5" /> Claim a BONUS on your first order of 5+ chapatis!
                 </div>
               </div>
