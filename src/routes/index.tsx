@@ -93,7 +93,7 @@ const PRODUCTS = [
 const AREAS = [
   "Kitengela Town", "Milimani", "Yukos", "Acacia", "Chuna", "Kimalat",
   "New Valley", "Nyama Villa", "Old Namanga Road", "Deliverance", "Korrompoi",
-  "EPZ", "GMC", "Prisons", "KAG", "Oloosirkon", "Other (specify)",
+  "EPZ", "GMC", "Prisons", "KAG", "Oloosirkon", "Other? Specify below",
 ];
 
 const TESTIMONIALS = [
