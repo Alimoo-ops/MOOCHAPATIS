@@ -80,7 +80,7 @@ export const Route = createFileRoute("/")({
 
 const PHONE = "0718357737";
 const WHATSAPP = "254718357737";
-const WHATSAPP_LINK = `https://wa.me/${"254718357737"}`;
+const WHATSAPP_LINK = "https://wa.me/qr/4L3GTQG4MQQGB1";
 const MPESA = "0718357737";
 
 const PRODUCTS = [
