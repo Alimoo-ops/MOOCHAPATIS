@@ -122,14 +122,16 @@ function HomePage() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    // If we've already shown the splash this session, dismiss immediately
-    // (still no flicker — splash covers the page until this runs).
+    const dismiss = () => {
+      setSplashFading(true);
+      setTimeout(() => setSplash(false), 500);
+    };
     if (sessionStorage.getItem("moo_splash")) {
-      setSplash(false);
+      dismiss();
       return;
     }
     sessionStorage.setItem("moo_splash", "1");
-    const t = setTimeout(() => setSplash(false), 1800);
+    const t = setTimeout(dismiss, 1800);
     return () => clearTimeout(t);
   }, []);
 
